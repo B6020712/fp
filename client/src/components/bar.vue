@@ -1,18 +1,16 @@
 <template>
   <div class="my-2">
-    <v-row>
-      <v-btn text @click="toHome">หน้าแรก</v-btn>
-      <v-btn text @click="toLAB1">LAB1</v-btn>
-      <v-btn text @click="toLAB2">LAB2</v-btn>
-      <v-btn text @click="toLAB3">LAB3</v-btn> 
-      <v-btn text @click="toLAB4">LAB4</v-btn>
-      <v-btn text @click="toLAB5">LAB5</v-btn>
-      <v-btn text @click="toLAB6">LAB6</v-btn>
-      <v-btn text @click="toLAB7">LAB7</v-btn>
-      <v-btn text @click="toLAB8">LAB8</v-btn>
-      <v-btn text @click="toLAB9">LAB9</v-btn>
-      <v-btn text @click="toLAB10">LAB10</v-btn>
-    </v-row>
+    <v-col><v-btn text @click="toHome">หน้าแรก</v-btn></v-col>
+    <v-col><v-btn text @click="toLAB1">LAB1</v-btn></v-col>
+    <v-col><v-btn text @click="toLAB2">LAB2</v-btn></v-col>
+    <v-col><v-btn text @click="toLAB3">LAB3</v-btn></v-col> 
+    <v-col><v-btn text @click="toLAB4">LAB4</v-btn></v-col>
+    <v-col><v-btn text @click="toLAB5">LAB5</v-btn></v-col>
+    <v-col><v-btn text @click="toLAB6">LAB6</v-btn></v-col>
+    <v-col><v-btn text @click="toLAB7">LAB7</v-btn></v-col>
+    <v-col><v-btn text @click="toLAB8">LAB8</v-btn></v-col>
+    <v-col><v-btn text @click="toLAB9">LAB9</v-btn></v-col>
+    <v-col><v-btn text @click="toLAB10">LAB10</v-btn></v-col>
   </div>
 </template>
 

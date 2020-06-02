@@ -2,11 +2,20 @@
   <v-app>
     <div id="app">
       <div id="nav">
-        <v-app-bar app>
+        <v-app-bar app dark>
           <v-toolbar-title>Basic Computer Network</v-toolbar-title>
-          <v-spacer></v-spacer>
-          <v-spacer></v-spacer>
-          <bar />
+          <v-spacer></v-spacer><v-spacer></v-spacer>
+          <v-menu open-on-hover top offset-y>
+            <template v-slot:activator="{ on }">
+              <v-btn text v-on="on">
+                LAB 1-10
+                <v-icon>mdi-menu-down</v-icon>
+              </v-btn>
+            </template>
+            <v-list>
+              <bar/>
+            </v-list>
+          </v-menu>
           <v-app-bar-nav-icon></v-app-bar-nav-icon>
         </v-app-bar>
         <v-content>
