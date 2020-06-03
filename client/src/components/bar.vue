@@ -1,6 +1,7 @@
 <template>
   <div class="my-2">
-    <v-col><v-btn text @click="toHome">หน้าแรก</v-btn></v-col>
+    <v-col><v-btn text @click="toHome"><v-icon>mdi-home</v-icon>หน้าแรก</v-btn></v-col>
+    <v-col><v-btn text @click="toBeforeLAB">BeforeLAB</v-btn></v-col>
     <v-col><v-btn text @click="toLAB1">LAB1</v-btn></v-col>
     <v-col><v-btn text @click="toLAB2">LAB2</v-btn></v-col>
     <v-col><v-btn text @click="toLAB3">LAB3</v-btn></v-col> 
@@ -11,6 +12,7 @@
     <v-col><v-btn text @click="toLAB8">LAB8</v-btn></v-col>
     <v-col><v-btn text @click="toLAB9">LAB9</v-btn></v-col>
     <v-col><v-btn text @click="toLAB10">LAB10</v-btn></v-col>
+    <v-col><v-btn text @click="toSolutions">เฉลยแลป</v-btn></v-col>
   </div>
 </template>
 
@@ -19,6 +21,9 @@ export default {
   methods: {
     toHome() {
       this.$router.push("/");
+    },
+    toBeforeLAB() {
+      this.$router.push("/beforelab");
     },
     toLAB1() {
       this.$router.push("/lab1");
@@ -49,6 +54,9 @@ export default {
     },
     toLAB10() {
       this.$router.push("/lab10");
+    },
+    toSolutions() {
+      this.$router.push("/solutions");
     }
   }
 }

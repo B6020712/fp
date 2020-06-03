@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import BeforeLAB from '../views/BeforeLAB.vue'
+import Solutions from '../views/Solutions.vue'
 import LAB1 from '../views/LAB1.vue'
 import LAB2 from '../views/LAB2.vue'
 import LAB3 from '../views/LAB3.vue'
@@ -17,6 +18,7 @@ Vue.use(VueRouter)
 
 const routes = [
   { path: '/', component: Home },
+  { path: '/solutions', component: Solutions },
   { path: '/beforelab', component: BeforeLAB },
   { path: '/lab1', component: LAB1 }, 
   { path: '/lab2', component: LAB2 }, 

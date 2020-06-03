@@ -1,30 +1,14 @@
 <template>
   <div>
-      <!-- BAR ON THE TOP -->
-    <v-app-bar absolute dark>
-      <v-toolbar-title>Basic Computer Network</v-toolbar-title>
-      <v-spacer/><v-spacer/>
-      <v-app-bar>
-        <v-tabs>
-          <bar />
-        </v-tabs>
-      </v-app-bar>
-    </v-app-bar>
     <!-- HEADER 1 -->
-    <br/><br/><br/>
-    <h1 class="display-2 font-weight-bold mb-3">LAB2</h1>
+    <p class="display-2 font-weight-bold mb-3">LAB 2</p>
+    <p class="title font-regular">
+      แลปนี้จะเกี่ยวกับการใช้คำสั่งพื้นฐานทั่วไป
+    </p>
   </div>
 </template>
 
 <script>
-import bar from "../components/bar" ;
 export default {
-  components: {
-    bar 
-  },
 };
 </script>
-
-<style>
-
-</style>

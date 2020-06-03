@@ -5,6 +5,7 @@
         <v-app-bar app dark>
           <v-toolbar-title>Basic Computer Network</v-toolbar-title>
           <v-spacer></v-spacer><v-spacer></v-spacer>
+
           <v-menu open-on-hover top offset-y>
             <template v-slot:activator="{ on }">
               <v-btn text v-on="on">
@@ -16,7 +17,6 @@
               <bar/>
             </v-list>
           </v-menu>
-          <v-app-bar-nav-icon></v-app-bar-nav-icon>
         </v-app-bar>
         <v-content>
           <v-container>
@@ -33,7 +33,7 @@ import bar from "./components/bar" ;
 export default {
   components: {
     bar 
-  },
+  }
 };
 </script>
 
