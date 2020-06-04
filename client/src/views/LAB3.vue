@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- HEADER 1 -->
-    <p class="display-2 font-weight-bold mb-3">LAB 3</p>
+    <p class="display-3 mb-3">LAB 3</p>
     <p class="title font-regular">Data Link Layer</p>
 
     <!-- brief -->

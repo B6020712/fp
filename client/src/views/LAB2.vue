@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- HEADER 1 -->
-    <p class="display-2 font-weight-bold mb-3">LAB 2</p>
+    <p class="display-3 mb-3">LAB 2</p>
     <p class="title font-regular">Assign IP address</p>
 
     <!-- brief -->
