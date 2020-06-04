@@ -30,10 +30,10 @@
           <v-card-subtitle>
             <p class="subtitle-1 text--primary">
               โหมด User<br />
-              Router><br />
+              Router><br /><br/>
               เข้าสู่โหมด Privileged หรือบางครั้งจะเรียกว่า Enable mode <br />
               Router> enable <br />
-              Router# <br />
+              Router# <br /><br/>
               เข้าสู่โหมด Global Configuration<br />
               Router# configuration terminal <br />
               Router(config)# <br />
@@ -71,7 +71,7 @@
 
     <!-- 1 -->
     <v-row align="center" justify="center">
-      <v-card class="mx-auto text-left" max-width="900" min-height="400">
+      <v-card class="mx-auto text-left" max-width="800" min-height="400">
         <v-card-title>
           <p class="headline text--primary">ขั้นตอนการทำแลป</p>
         </v-card-title>
@@ -121,7 +121,6 @@
             หรือเราจะพิมพ์ตัวอักษรต้นๆของคำแล้วกด tab จะเป็นการตัวอักษรที่เหลือที่สามารถต่อได้
           </p>
           <p class="subtitle-1 text--primary">
-            9.กลับมาสู่ Priviledge Mode และใช้คำสั่งดูว่าตอนนี้มี Config อะไรบ้างที่ run อยู่ใน R1<br/>
             <v-img max-width="700" min-height="100" src="@/assets/lab/lab1/lab1-4.png"></v-img><br/>
             นี่คือ config ที่เราพึ่ง set ให้กับ Router ของเราโดยเราจะเห็นคำว่า --More-- ที่ด้านล่างสุด<br/>
             ถ้าเรากด enter จะเป็นการโชว์ข้อมูลบรรทัดต่อมาทีละบรรทัด แต่ถ้าเรากด spacerbar จะเป็นการโชว์ข้อมูลทีละหลายบรรทัด<br/><br/>
