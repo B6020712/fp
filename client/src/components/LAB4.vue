@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <v-card class="mx-auto" max-width="1200" min-height="100">
     <!-- HEADER 1 -->
-    <p class="display-3 mb-3">LAB 4</p>
-    <p class="title font-regular">VLAN Part 1</p>
+    <p class="display-3 mb-3 text-center">LAB 4</p>
+    <p class="title font-regular text-center">VLAN Part 1</p>
 
     <!-- brief -->
     <v-row align="center" justify="center">
@@ -112,7 +112,7 @@
         </v-card-subtitle>
       </v-card>
     </v-row>
-  </div>
+  </v-card>
 </template>
 
 <script>
