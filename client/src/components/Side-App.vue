@@ -1,29 +1,78 @@
 <template>
-  <v-card  height="400" width="256">
-    <v-navigation-drawer absolute permanent left>
-      <v-stepper v-model="e6" vertical>
-      <v-stepper-step :complete="e6 > 1" step="1">
-        Select an app
-        <small>Summarize if needed</small>
-      </v-stepper-step>
-      <v-stepper-step :complete="e6 > 2" step="2">Configure analytics for this app</v-stepper-step>
-      <v-stepper-step :complete="e6 > 3" step="3">Select an ad format and name ad unit</v-stepper-step>
-      <v-stepper-step step="4">View setup instructions</v-stepper-step>
-    </v-stepper>
-    </v-navigation-drawer>
-  </v-card>
+  <v-navigation-drawer v-if="logInSign" v-model="drawer" :mini-variant.sync="mini" permanent clipped app>
+    <!-- <v-list-item class="px-2">
+      <v-list-item-avatar>
+        <v-img :src="photo"></v-img>
+      </v-list-item-avatar>
+      <v-list-item-title>LAB RESULT</v-list-item-title>
+
+      <v-btn icon @click.stop="mini = !mini">
+        <v-icon>mdi-chevron-left</v-icon>
+      </v-btn>
+    </v-list-item>
+
+    <v-divider></v-divider> -->
+
+    <v-list dense>
+      <v-list-item v-for="item in items" :key="item.title" link>
+        <v-list-item-icon>
+          <v-icon>{{ item.icon }}</v-icon>
+        </v-list-item-icon>
+
+        <v-list-item-content>
+          <v-list-item-title v-on:click="goto(item.action)">{{ item.title }}</v-list-item-title>
+          <v-list-item-subtitle>{{ item.subtitle }}</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
+  </v-navigation-drawer>
 </template>
 
 <script>
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+// import { db } from '../main'
+
 export default {
-  data() {
+  data () {
     return {
-      e6: 1,
+      logInSign : false,
+      user : {
+        name : '',
+        email : '',
+        photo : ''
+      },
+      drawer: true,
+      items: [
+        { title: 'LAB 1', icon: 'mdi-checkbox-multiple-blank-circle-outline', action: "/lab1" },
+        { title: 'LAB 2', icon: 'mdi-checkbox-multiple-blank-circle-outline', action: "/lab2" },
+        { title: 'LAB 3', icon: 'mdi-checkbox-multiple-blank-circle-outline', action: "/lab3" },
+        { title: 'LAB 4', icon: 'mdi-checkbox-multiple-blank-circle-outline', action: "/lab4" },
+        { title: 'LAB 5', icon: 'mdi-checkbox-multiple-blank-circle-outline', action: "/lab5" },
+        { title: 'LAB 6', icon: 'mdi-checkbox-multiple-blank-circle-outline', action: "/lab6" },
+        { title: 'LAB 7', icon: 'mdi-checkbox-multiple-blank-circle-outline', action: "/lab7" },
+        { title: 'LAB 8', icon: 'mdi-checkbox-multiple-blank-circle-outline', action: "/lab8" },
+        { title: 'LAB 9', icon: 'mdi-checkbox-multiple-blank-circle-outline', action: "/lab9" },
+        { title: 'LAB 10', icon: 'mdi-checkbox-multiple-blank-circle-outline', action: "/lab10" },
+      ],
+      mini: true,
+    }
+  },
+  created() {
+    firebase.auth().onAuthStateChanged(user => {
+      this.logInSign = !!user;
+      if(user) {
+        this.name = user.displayName;
+        this.email = user.email;
+        this.photo = user.photoURL;
+      }
+    })
+  },
+
+  methods: {
+    goto: function (to) {
+      this.$router.push(to);
     }
   }
 }
 </script>
-
-<style>
-
-</style>

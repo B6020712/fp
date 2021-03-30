@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-// import Lab from '../components/Lab.vue'
+import Lab_Summary from '../components/Lab_Summary.vue'
 import BeforeLAB from '../components/BeforeLAB.vue'
 import Solutions from '../components/Solutions.vue'
 import LAB1 from '../components/LAB1.vue'
@@ -20,7 +20,7 @@ Vue.use(VueRouter)
 
 const routes = [
   { path: '/', component: Home },
-  // { path: '/lab', component: Lab , meta: {requireAuth: true}},
+  { path: '/labsummary', component: Lab_Summary , meta: {requireAuth: true}},
   { path: '/solutions', component: Solutions , meta: {requireAuth: true}},
   { path: '/beforelab', component: BeforeLAB , meta: {requireAuth: true}},
   { path: '/lab1', component: LAB1 , meta: {requireAuth: true}}, 

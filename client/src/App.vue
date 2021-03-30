@@ -1,8 +1,7 @@
 <template>
   <v-app>
-    <Top-Header></Top-Header>
+    <LoginHeader></LoginHeader>
     <!-- <Side-App></Side-App> -->
-    <br/>
     <v-content>
       <v-container fluid>
         <router-view></router-view>
@@ -12,11 +11,11 @@
 </template>
 
 <script>
-import TopHeader from './components/Top-Header'
+import LoginHeader from './components/LoginHeader'
 // import SideApp from './components/Side-App'
 export default {
   components:{
-    'Top-Header':TopHeader,
+    'LoginHeader':LoginHeader,
     // 'Side-App':SideApp,
   },
   name: 'App' ,
@@ -29,7 +28,7 @@ export default {
 
 </script>
 
-<style scoped>
+<style>
  .main {
    width: 100%;
    height: 100%;

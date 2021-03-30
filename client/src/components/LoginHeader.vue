@@ -1,14 +1,32 @@
 <template>
   <div>
-    <v-app-bar class="appbar" color="brown">
+    <v-app-bar class="appbar" color="#1976D2" clipped-left app>
       <v-toolbar-title class="display-1 font-weight-medium mr-0 mr-md-4 v-sheet theme--dark transparent">Nerkwet</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-title>
         <div v-if="logInSign" class="subtitle-1 font-weight-medium mr-0 mr-md-4 v-sheet theme--dark transparent">
-          <!-- <img :src="photo" class="photoo"> -->
-          คุณ : {{name}}
-          e-mail : {{email}}
-          <v-btn @click="signOut">Sign Out</v-btn>
+          <v-icon v-on:click="$router.push('/labsummary')" dark style="padding-right: 10px">mdi-home</v-icon>
+          <!-- {{name}} -->
+          <v-menu bottom min-width="200px" rounded offset-y>
+            <template v-slot:activator="{ on }">
+              <v-btn icon x-large v-on="on">
+                <v-avatar size="48">
+                  <img :src="photo" class="photoo">
+                </v-avatar>
+              </v-btn>
+            </template>
+            <v-card height="250px" width="250px">
+              <v-list-item-content class="justify-center">
+                <div class="mx-auto text-center">
+                  <v-avatar><img :src="photo" class="photoo"></v-avatar>
+                  <h3>{{name}}</h3>
+                  <p class="caption mt-1">{{email}}</p>
+                  <v-divider></v-divider><br/>
+                  <v-btn @click="signOut">Sign Out</v-btn>
+                </div>
+              </v-list-item-content>
+            </v-card>
+          </v-menu>
         </div>
         <div v-if="!logInSign"><v-btn @click="signIn">Sign In</v-btn></div>
       </v-toolbar-title>
@@ -19,11 +37,11 @@
 <script>
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
+
 export default {
   data() {
     return {
       logInSign : false,
-      // currentUser : false,
       user : {
         name : '',
         email : '',
@@ -40,11 +58,6 @@ export default {
         this.photo = user.photoURL;
       }
     })
-    // this.user = firebase.auth().currentUser;
-    // if(this.user) {
-    //   this.name = this.user.displayName;
-    //   this.email = this.user.email;
-    //   this.photo = this.user.photoURL;
   },
 
   methods: {
@@ -52,7 +65,7 @@ export default {
       const provider = new firebase.auth.GoogleAuthProvider();
 
       firebase.auth().signInWithPopup(provider).then((result) => {
-        this.$router.push("/beforelab");
+        this.$router.push("/labsummary");
         console.log(result);
         this.logInSign = true;
       }).catch((err) => {
@@ -68,7 +81,7 @@ export default {
       } catch(err){
         console.log(err);
       }
-    }
+    },
   }
 }
 </script>
@@ -79,7 +92,7 @@ export default {
     widows: 100%;
   }
   .photoo {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 </style>
